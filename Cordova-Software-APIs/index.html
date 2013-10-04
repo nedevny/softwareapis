@@ -27,6 +27,7 @@ under the License.
         <link href="css/kendo//kendo.mobile.all.min.css" rel="stylesheet" />
         <script src="js/libs/jquery-1.10.2.js"></script>
         <script src="js/libs/kendo.all.min.js"></script>
+        <script src="js/app/notifications.js"></script>
         <script src="js/index.js"></script>
         <title>Hello World</title>
     </head>
@@ -67,9 +68,11 @@ under the License.
                     <a href="#storage-view" data-role="button">Storage</a>
                 </li>
             </ul>
-
         </div>
-        <div id="notifications-view" data-id="notifications-view" data-role="view" data-layout="api-layout" data-title="Notifications API">
+
+        <div id="notifications-view" data-id="notifications-view" data-role="view" data-layout="api-layout" data-title="Notifications API"
+             data-show="app.notifications.init"
+             data-hide="app.notifications.close">
         </div>
         <div id="device-view" data-id="device-view" data-role="view" data-layout="api-layout" data-title="Device API">
         </div>
@@ -90,8 +93,8 @@ under the License.
         <div id="media-view" data-id="media-view" data-role="view" data-layout="api-layout" data-title="Media API">
         </div>
         <div id="storage-view" data-id="storage-view" data-role="view" data-layout="api-layout" data-title="Storage API">
-        </div>        
-        
+        </div>
+
         <div id="home-layout" data-id="home-layout" data-role="layout">
             <header data-role="header">
                 <div data-role="navbar">
@@ -99,7 +102,7 @@ under the License.
                 </div>
             </header>
         </div>
-        
+
         <div id="api-layout" data-id="api-layout" data-role="layout">
             <header data-role="header">
                 <div data-role="navbar">
