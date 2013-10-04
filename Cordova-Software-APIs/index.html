@@ -27,14 +27,86 @@ under the License.
         <link href="css/kendo//kendo.mobile.all.min.css" rel="stylesheet" />
         <script src="js/libs/jquery-1.10.2.js"></script>
         <script src="js/libs/kendo.all.min.js"></script>
+        <script src="js/index.js"></script>
         <title>Hello World</title>
     </head>
     <body>
-        <div id="home-view" data-id="home-view" data-role="view" data-title="Home">            
+        <div id="home-view" data-id="home-view" data-role="view" data-layout="home-layout" data-title="Home">
+            <ul id="devices-list">
+                <li>
+                    <a href="#notifications-view" data-role="button">Notifications</a>
+                </li>
+                <li>
+                    <a href="#device-view" data-role="button">Device</a>
+                </li>
+                <li>
+                    <a href="#capture-view" data-role="button">Capture</a>
+                </li>
+                <li>
+                    <a href="#connection-view" data-role="button">Connection</a>
+                </li>
+                <li>
+                    <a href="#contacts-view" data-role="button">Contacts</a>
+                </li>
+                <li>
+                    <a href="#events-view" data-role="button">Events</a>
+                </li>
+                <li>
+                    <a href="#file-system-view" data-role="button">File System</a>
+                </li>
+                <li>
+                    <a href="#globalization-view" data-role="button">Globalization</a>
+                </li>
+                <li>
+                    <a href="#InAppBrowser-view" data-role="button">InAppBrowser</a>
+                </li>
+                <li>
+                    <a href="#media-view" data-role="button">Media</a>
+                </li>
+                <li>
+                    <a href="#storage-view" data-role="button">Storage</a>
+                </li>
+            </ul>
+
         </div>
-        <div id="device-view" data-id="device-view" data-role="view" data-title="Device API">            
+        <div id="notifications-view" data-id="notifications-view" data-role="view" data-layout="api-layout" data-title="Notifications API">
         </div>
-        <div id="device-view" data-id="device-view" data-role="view" data-title="Device API">            
+        <div id="device-view" data-id="device-view" data-role="view" data-layout="api-layout" data-title="Device API">
+        </div>
+        <div id="capture-view" data-id="capture-view" data-role="view" data-layout="api-layout" data-title="Capture API">
+        </div>
+        <div id="connection-view" data-id="connection-view" data-role="view" data-layout="api-layout" data-title="Connection API">
+        </div>
+        <div id="contacts-view" data-id="contacts-view" data-role="view" data-layout="api-layout" data-title="Contacts API">
+        </div>
+        <div id="events-view" data-id="events-view" data-role="view" data-layout="api-layout" data-title="Events API">
+        </div>
+        <div id="file-system-view" data-id="file-system-view" data-role="view" data-layout="api-layout" data-title="File system API">
+        </div>
+        <div id="globalization-view" data-id="globalization-view" data-role="view" data-layout="api-layout" data-title="Globalization API">
+        </div>
+        <div id="InAppBrowser-view" data-id="InAppBrowser-view" data-role="view" data-layout="api-layout" data-title="InAppBrowser API">
+        </div>
+        <div id="media-view" data-id="media-view" data-role="view" data-layout="api-layout" data-title="Media API">
+        </div>
+        <div id="storage-view" data-id="storage-view" data-role="view" data-layout="api-layout" data-title="Storage API">
+        </div>        
+        
+        <div id="home-layout" data-id="home-layout" data-role="layout">
+            <header data-role="header">
+                <div data-role="navbar">
+                    <span data-role="view-title"></span>
+                </div>
+            </header>
+        </div>
+        
+        <div id="api-layout" data-id="api-layout" data-role="layout">
+            <header data-role="header">
+                <div data-role="navbar">
+                    <a data-role="backbutton" class="button" data-align="left">Back</a>
+                    <span data-role="view-title"></span>
+                </div>
+            </header>
         </div>
     </body>
 </html>
