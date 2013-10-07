@@ -24,10 +24,19 @@ under the License.-->
         <link href="css/kendo/kendo.common.min.css" rel="stylesheet" />
         <link href="css/kendo//kendo.default.min.css" rel="stylesheet" />
         <link href="css/kendo//kendo.mobile.all.min.css" rel="stylesheet" />
-        <script src="cordova.js"></script>        
+        <style>
+            body
+            {
+                font-size: 18px;
+            }
+        </style>
+        <script src="cordova.js"></script>
         <script src="js/libs/jquery-1.10.2.js"></script>
         <script src="js/libs/kendo.all.min.js"></script>
         <script src="js/app/notifications.js"></script>
+        <script src="js/app/device.js"></script>
+        <script src="js/app/connection.js"></script>
+        <script src="js/app/contacts.js"></script>
         <script src="js/index.js"></script>
         <title>Hello World</title>
     </head>
@@ -75,17 +84,78 @@ under the License.-->
              data-hide="app.notifications.close">
             <ul class="listview">
                 <li>
-                    <a data-role="button" data-role="touch" data-tap="app.notifications.alert">alert</a>                
+                    <a data-role="touch" class="button" data-tap="app.notifications.alert">Alert</a>
+                </li>
+                <li>
+                    <a data-role="touch" class="button" data-tap="app.notifications.confirm">Confirm</a>
+                </li>
+                <li>
+                    <a data-role="touch" class="button" data-tap="app.notifications.prompt">Prompt</a>
+                </li>
+                <li>
+                    <a data-role="touch" class="button" data-tap="app.notifications.beep">Beep</a>
+                </li>
+                <li>
+                    <a data-role="touch" class="button" data-tap="app.notifications.vibrate">Vibrate</a>
                 </li>
             </ul>
         </div>
-        <div id="device-view" data-id="device-view" data-role="view" data-layout="api-layout" data-title="Device API">
+        <div id="device-view" data-id="device-view" data-role="view" data-layout="api-layout" data-title="Device API"
+                data-show="app.deviceInfo.init">
+            <table>
+                <tr>
+                    <td>
+                        <span data-align="right">Device Name:</span>
+                    </td>
+                    <td>
+                        <strong data-align="left" data-bind="text: name"></strong>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span data-align="right">Cordova Version:</span>
+                    </td>
+                    <td>
+                        <strong data-align="left" data-bind="text: cordova"></strong>
+                    </td>
+                </tr>
+                <tr> 
+                    <td>
+                        <span data-align="right">Platform:</span>
+                    </td>
+                    <td>
+                        <strong data-align="left" data-bind="text: platform"></strong>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span data-align="right">Device UUID:</span>
+                    </td>
+                    <td>
+                        <strong data-align="left" data-bind="text:uuid"></strong>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span data-align="right">Version:</span>
+                    </td>
+                    <td>
+                        <strong data-align="left" data-bind="text:version"></strong>
+                    </td>
+                </tr>
+            </table>
         </div>
         <div id="capture-view" data-id="capture-view" data-role="view" data-layout="api-layout" data-title="Capture API">
         </div>
-        <div id="connection-view" data-id="connection-view" data-role="view" data-layout="api-layout" data-title="Connection API">
+        <div id="connection-view" data-id="connection-view" data-role="view" data-layout="api-layout" data-title="Connection API"
+            data-show="app.connectionApi.init" data-hide="app.connectionApi.close">
+            <h1 data-bind="text: state"></h1>
         </div>
-        <div id="contacts-view" data-id="contacts-view" data-role="view" data-layout="api-layout" data-title="Contacts API">
+        <div id="contacts-view" data-id="contacts-view" data-role="view" data-layout="api-layout" data-title="Contacts API"
+            data-show="app.contactsApi.init">
+            <input type="text" data-bind="value:name"/>
+            <input type="text" data-bind="value:number"/>
+            <a data-role="touch" data-tap="app.contactsApi.create">Create</a>
         </div>
         <div id="events-view" data-id="events-view" data-role="view" data-layout="api-layout" data-title="Events API">
         </div>

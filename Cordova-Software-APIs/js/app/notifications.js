@@ -1,7 +1,7 @@
 var app = app || {};
 
-(function(application) {    
-    application.notifications = {
+(function(a) {    
+    a.notifications = {
         init:function() {
         },
         close: function() {            
@@ -10,14 +10,15 @@ var app = app || {};
             navigator.notification.alert("Alert!");
         },
         confirm: function() {
-            navigator.notification.confirm("Alert!");
+            navigator.notification.confirm("Are you sure?!");
         },
         prompt:function() {
-            var result = navigator.notification.prompt("Are you sure?");
-            navigator.notification.alert(result);
+            navigator.notification.prompt("How old are you", function(result) {               
+                navigator.notification.alert(result); 
+            });
         },
         beep: function() {
-            beep(3);
+            navigator.notification.beep(3);
         },
         vibrate: function() {
             navigator.notification.vibrate(2000);
